@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR.js Image Tracking Example</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+      
+      <!-- Camera -->
+      <a-camera position="0 0 0"></a-camera>
+
+      <!-- NFT Marker -->
+      <a-nft
+        type="nft"
+        url="earth"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance="0.01"
+        smoothThreshold="5">
+        
+        <!-- 3D Model -->
+        <a-entity
+          gltf-model="earth.glb"
+          scale="0.5 0.5 0.5"
+          position="0 0 0"
+          rotation="0 0 0">
+        </a-entity>
+      </a-nft>
+    </a-scene>
+  </body>
+</html>
